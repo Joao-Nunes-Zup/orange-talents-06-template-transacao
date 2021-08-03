@@ -1,4 +1,6 @@
-package com.ot6.transacao.consumer.messages;
+package com.ot6.transacao.domains.establishments.dtos;
+
+import com.ot6.transacao.domains.establishments.Establishment;
 
 public class EstablishmentMessage {
 
@@ -25,5 +27,9 @@ public class EstablishmentMessage {
                 ", cidade='" + cidade + '\'' +
                 ", endereco='" + endereco + '\'' +
                 '}';
+    }
+
+    public Establishment toEntity() {
+        return new Establishment(this.nome, this.cidade, this.endereco);
     }
 }

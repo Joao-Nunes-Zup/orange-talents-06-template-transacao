@@ -1,6 +1,6 @@
 package com.ot6.transacao.config;
 
-import com.ot6.transacao.consumer.messages.TransactionMessage;
+import com.ot6.transacao.domains.transactions.dtos.TransactionMessage;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;

@@ -1,7 +1,10 @@
-package com.ot6.transacao.consumer.messages;
+package com.ot6.transacao.domains.transactions.dtos;
 
-import com.ot6.transacao.consumer.messages.CardMessage;
-import com.ot6.transacao.consumer.messages.EstablishmentMessage;
+import com.ot6.transacao.domains.cards.Card;
+import com.ot6.transacao.domains.cards.dtos.CardMessage;
+import com.ot6.transacao.domains.establishments.Establishment;
+import com.ot6.transacao.domains.establishments.dtos.EstablishmentMessage;
+import com.ot6.transacao.domains.transactions.Transaction;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -43,5 +46,15 @@ public class TransactionMessage {
                 ", cartao=" + cartao +
                 ", efetivadaEm=" + efetivadaEm +
                 '}';
+    }
+
+    public Transaction toEntity(Establishment estabelecimento, Card cartao) {
+        return new Transaction(
+                this.id,
+                this.valor,
+                estabelecimento,
+                cartao,
+                this.efetivadaEm
+        );
     }
 }
