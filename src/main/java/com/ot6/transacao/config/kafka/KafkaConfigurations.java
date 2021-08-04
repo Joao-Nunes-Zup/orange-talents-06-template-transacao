@@ -1,4 +1,4 @@
-package com.ot6.transacao.config;
+package com.ot6.transacao.config.kafka;
 
 import com.ot6.transacao.domains.transactions.dtos.TransactionMessage;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
